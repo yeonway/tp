@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2학년 5반 수행평가 관리 시스템</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>📅 2학년 5반 수행평가 관리</h1>
+            <button id="adminToggle" class="admin-btn">관리자 모드</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- 달력 표시 영역 -->
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button id="prevMonth">&lt;</button>
+                <h2 id="currentMonth">2024년 1월</h2>
+                <button id="nextMonth">&gt;</button>
+            </div>
+            <div class="calendar">
+                <div class="weekdays">
+                    <div>일</div>
+                    <div>월</div>
+                    <div>화</div>
+                    <div>수</div>
+                    <div>목</div>
+                    <div>금</div>
+                    <div>토</div>
+                </div>
+                <div class="days" id="calendarDays">
+                    <!-- 날짜가 여기에 동적으로 생성됩니다 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 수행평가 상세 보기 및 추가 폼 -->
+        <div class="sidebar">
+            <div id="eventDetail" style="display: none;">
+                <h3>수행평가 상세</h3>
+                <div id="eventContent"></div>
+                <button id="closeEvent">닫기</button>
+            </div>
+            
+            <div id="addEventForm" style="display: none;">
+                <h3>새 수행평가 추가</h3>
+                <form id="eventForm">
+                    <label for="eventDate">날짜:</label>
+                    <input type="date" id="eventDate" required>
+                    
+                    <label for="eventPeriod">교시:</label>
+                    <select id="eventPeriod" required>
+                        <option value="">선택하세요</option>
+                        <option value="1">1교시</option>
+                        <option value="2">2교시</option>
+                        <option value="3">3교시</option>
+                        <option value="4">4교시</option>
+                        <option value="5">5교시</option>
+                        <option value="6">6교시</option>
+                        <option value="7">7교시</option>
+                    </select>
+                    
+                    <label for="eventSubject">과목:</label>
+                    <input type="text" id="eventSubject" placeholder="예: 수학" required>
+                    
+                    <label for="eventTitle">제목:</label>
+                    <input type="text" id="eventTitle" placeholder="예: 함수의 극한 수행평가" required>
+                    
+                    <label for="eventDescription">설명:</label>
+                    <textarea id="eventDescription" placeholder="상세 내용을 입력하세요"></textarea>
+                    
+                    <button type="submit">추가하기</button>
+                    <button type="button" id="cancelAdd">취소</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- client.js로 변경 -->
+    <script src="client.js"></script>
+</body>
+</html>

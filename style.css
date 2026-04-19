@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admin-btn {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.admin-btn:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+main {
+    display: flex;
+    max-width: 1200px;
+    margin: 2rem auto;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+/* 달력 스타일 */
+.calendar-container {
+    flex: 3;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    padding: 2rem;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.calendar-header button {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.calendar-header h2 {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day {
+    min-height: 100px;
+    border: 1px solid #eee;
+    padding: 5px;
+    background: white;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.day:hover {
+    background: #f0f5ff;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.day.other-month {
+    background: #f9f9f9;
+    color: #ccc;
+}
+
+.day-number {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.events {
+    font-size: 0.8rem;
+}
+
+.event-badge {
+    background: #667eea;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 10px;
+    margin: 2px 0;
+    font-size: 0.7rem;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+    flex: 1;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    padding: 2rem;
+    height: fit-content;
+}
+
+.sidebar h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 0.5rem;
+}
+
+/* 폼 스타일 */
+#eventForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#eventForm label {
+    font-weight: bold;
+    color: #555;
+}
+
+#eventForm input, #eventForm select, #eventForm textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#eventForm textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+#eventForm button {
+    padding: 0.7rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#eventForm button[type="submit"] {
+    background: #667eea;
+    color: white;
+}
+
+#eventForm button[type="button"] {
+    background: #ccc;
+    color: #333;
+}
+
+#closeEvent, #cancelAdd {
+    background: #ccc !important;
+    color: #333 !important;
+    margin-top: 1rem;
+}
+
+/* 이벤트 상세 스타일 */
+#eventContent {
+    background: #f8f9ff;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.event-detail-item {
+    margin-bottom: 0.5rem;
+}
+
+.event-detail-item strong {
+    color: #667eea;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    
+    .calendar-container {
+        padding: 1rem;
+    }
+    
+    .day {
+        min-height: 80px;
+        font-size: 0.9rem;
+    }
+}
